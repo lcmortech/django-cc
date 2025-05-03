@@ -11,4 +11,4 @@ def hell_world(request):
 # class-based view
 
 class HelloWorld(View): # inherits from the view class
-    def get
+    pass
