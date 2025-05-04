@@ -11,4 +11,5 @@ def hell_world(request):
 # class-based view
 
 class HelloNYC(View): # inherits from the view class
-    
+    def get(self, request):
+        return HttpResponse("Hello NYC")
