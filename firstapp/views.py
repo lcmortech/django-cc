@@ -13,3 +13,14 @@ def hello_world(request):
 class HelloNYC(View): # inherits from the view class
     def get(self, request):
         return HttpResponse("Hello NYC")
+    
+def home(request):
+    form = ReservationForm()
+
+    if request.method == "POST":
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Success")
+        
+    return render(request, "index.html", {"form": form})
